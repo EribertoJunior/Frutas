@@ -8,7 +8,7 @@ import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface FrutaService {
-    @GET
+    @GET("api/tfvjsonapi.php/")
     fun carregarFrutas(
         @Query("search") nomeDaFruta: String = "all"
     ): Call<ResponseAPI<ArrayList<Fruta>>>

@@ -23,7 +23,7 @@ class MainViewModel(
         getListFrut()
     }
 
-    fun buscarFrutas(search:String?){
+    fun buscarFrutas(search:String? = null){
         if(search.isNullOrEmpty()){
             getListFrut()
         } else{

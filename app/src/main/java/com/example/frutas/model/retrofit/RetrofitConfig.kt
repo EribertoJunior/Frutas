@@ -1,6 +1,7 @@
 package com.example.frutas.model.retrofit
 
 import com.example.frutas.BuildConfig
+import com.example.frutas.model.retrofit.service.DetalhesService
 import com.example.frutas.model.retrofit.service.FrutaService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
@@ -28,4 +29,5 @@ class RetrofitConfig {
         .build()
 
     fun frutasService(): FrutaService = retrofitFruts.create(FrutaService::class.java)
+    fun detalheDaFrutaService(): DetalhesService = retrofitDetails.create(DetalhesService::class.java)
 }

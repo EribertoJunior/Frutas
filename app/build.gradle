@@ -20,12 +20,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", '"http://tropicalfruitandveg.com/api/tfvjsonapi.php"'
-            buildConfigField "String", "DETAILS_URL", '"http://api.tropicalfruitandveg.com/tfvjsonapi.php"'
+            buildConfigField "String", "BASE_URL", '\"http://tropicalfruitandveg.com/api/tfvjsonapi.php/\"'
+            buildConfigField "String", "DETAILS_URL", '\"http://api.tropicalfruitandveg.com/tfvjsonapi.php/\"'
         }
         debug{
-            buildConfigField "String", "BASE_URL", '"http://tropicalfruitandveg.com/api/tfvjsonapi.php"'
-            buildConfigField "String", "DETAILS_URL", '"http://api.tropicalfruitandveg.com/tfvjsonapi.php"'
+            buildConfigField "String", "BASE_URL", "\"http://tropicalfruitandveg.com/\""
+            buildConfigField "String", "DETAILS_URL", '\"http://api.tropicalfruitandveg.com/tfvjsonapi.php/\"'
         }
     }
     compileOptions {
@@ -76,8 +76,6 @@ dependencies {
     // Koin AndroidX Experimental features
     implementation "org.koin:koin-androidx-ext:$koin_version"
     implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

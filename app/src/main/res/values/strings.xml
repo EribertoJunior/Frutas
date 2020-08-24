@@ -10,4 +10,12 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_detalhes_da_fruta">DetalhesDaFrutaActivity</string>
+    <string name="pesquisa">Pesquisa</string>
+    <string name="lista_de_frutas">Lista</string>
+    <string name="descricao">Descrição</string>
+    <string name="outros_nomes">Outros nomes</string>
+    <string name="nomes_bots">Nomes de bots</string>
+    <string name="imagem_da_fruta">Imagem da Fruta</string>
+    <string name="botao_de_limpar_a_pesquisa">Botão de limpar a pesquisa</string>
 </resources>

@@ -8,16 +8,16 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FrutaRepositoryImp(private val retroConfig: RetrofitConfig): FrutaRepository {
+class FrutaRepositoryImp(private val retroConfig: RetrofitConfig) : FrutaRepository {
 
     override fun getListFruts(callbackResponse: CallbackResponse<ArrayList<Fruta>>) {
         val call = retroConfig.frutasService().carregarFrutas()
-        call.enqueue(object : Callback<ResponseAPI<ArrayList<Fruta>>>{
+        call.enqueue(object : Callback<ResponseAPI<ArrayList<Fruta>>> {
             override fun onResponse(
                 call: Call<ResponseAPI<ArrayList<Fruta>>>,
                 response: Response<ResponseAPI<ArrayList<Fruta>>>
             ) {
-                if(response.isSuccessful)
+                if (response.isSuccessful)
                     response.body()?.let {
                         callbackResponse.success(it.results)
                     }
@@ -33,14 +33,18 @@ class FrutaRepositoryImp(private val retroConfig: RetrofitConfig): FrutaReposito
 
     override fun serachFrut(search: String, callbackResponse: CallbackResponse<ArrayList<Fruta>>) {
         val call = retroConfig.frutasService().carregarFrutas(search)
-        call.enqueue(object : Callback<ResponseAPI<ArrayList<Fruta>>>{
+        call.enqueue(object : Callback<ResponseAPI<ArrayList<Fruta>>> {
             override fun onResponse(
                 call: Call<ResponseAPI<ArrayList<Fruta>>>,
                 response: Response<ResponseAPI<ArrayList<Fruta>>>
             ) {
-                if(response.isSuccessful)
+                if (response.isSuccessful)
                     response.body()?.let {
-                        callbackResponse.success(it.results)
+                        if (it.error.isNullOrEmpty())
+                            callbackResponse.success(it.results)
+                        else
+                            callbackResponse.failure(it.error!!)
+
                     }
                 else
                     callbackResponse.failure(response.message())

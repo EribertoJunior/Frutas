@@ -95,12 +95,11 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
                 STATUS.SUCCESS -> {
                     swipeRefresh_frutas.isRefreshing = false
                     adicionarNovosItens(it.itens)
-                    //showMessageError(message = it.itens.size.toString())
                 }
                 STATUS.ERROR -> {
                     swipeRefresh_frutas.isRefreshing = false
+                    adicionarNovosItens(arrayListOf())
                     showMessageError(message = it.errorMessage)
-
                 }
             }
         })

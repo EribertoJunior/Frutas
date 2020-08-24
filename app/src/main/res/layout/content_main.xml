@@ -11,7 +11,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListaDeFrutas"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_list_frut" />
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,6 +1,5 @@
 package com.example.frutas.model.retrofit
 
-import com.example.frutas.BuildConfig
 import com.example.frutas.model.retrofit.service.DetalhesService
 import com.example.frutas.model.retrofit.service.FrutaService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -9,20 +8,20 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitConfig {
+class RetrofitConfig(baseUrl: String, detailsUrl: String) {
     var interceptador : HttpLoggingInterceptor = HttpLoggingInterceptor().setLevel(
         HttpLoggingInterceptor.Level.BODY)
     var client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptador).build()
 
     private val retrofitFruts = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
+        .baseUrl(baseUrl)
         .client(client)
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
     private val retrofitDetails = Retrofit.Builder()
-        .baseUrl(BuildConfig.DETAILS_URL)
+        .baseUrl(detailsUrl)
         .client(client)
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .addConverterFactory(GsonConverterFactory.create())

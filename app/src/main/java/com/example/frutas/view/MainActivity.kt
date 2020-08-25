@@ -18,7 +18,7 @@ import com.example.frutas.view.adapters.InteracaoComLista
 import com.example.frutas.view_model.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.toolbar
 import kotlinx.android.synthetic.main.activity_main.btLimparPesquisa
-import kotlinx.android.synthetic.main.activity_main.tvPesquisa
+import kotlinx.android.synthetic.main.activity_main.etPesquisa
 import kotlinx.android.synthetic.main.content_main.rvListaDeFrutas
 import kotlinx.android.synthetic.main.content_main.swipeRefresh_frutas
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -44,9 +44,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             )
         }
         btLimparPesquisa.setOnClickListener {
-            tvPesquisa.text?.clear()
+            etPesquisa.text?.clear()
         }
-        tvPesquisa.addTextChangedListener(object : TextWatcher {
+        etPesquisa.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }

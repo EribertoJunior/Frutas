@@ -20,7 +20,7 @@ class AdapterFrutas(
         interacaoComLista.selecionou(repositorio)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_list_frut, null))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_list_frut, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

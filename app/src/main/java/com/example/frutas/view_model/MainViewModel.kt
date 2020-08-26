@@ -15,7 +15,7 @@ import kotlinx.coroutines.withContext
 
 class MainViewModel(
     private val frutaRepository: FrutaRepository
-)  : ViewModel(), LifecycleObserver {
+) : ViewModel(), LifecycleObserver {
 
     val frutaData : MutableLiveData<FrutaResponseCustom> = MutableLiveData(FrutaResponseCustom(status = STATUS.OPEN_LOADING))
 
@@ -23,19 +23,19 @@ class MainViewModel(
         getListFrut()
     }
 
-    fun buscarFrutas(search:String? = null){
-        if(search.isNullOrEmpty()){
+    fun buscarFrutas(search: String? = null) {
+        if (search.isNullOrEmpty()) {
             getListFrut()
-        } else{
+        } else {
             searchFrutByBarcode(search)
         }
     }
 
-    private fun searchFrutByBarcode(search:String){
+    private fun searchFrutByBarcode(search: String) {
         showLoading()
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                frutaRepository.serachFrut(search, object : CallbackResponse<ArrayList<Fruta>>{
+                frutaRepository.serachFrut(search, object : CallbackResponse<ArrayList<Fruta>> {
                     override fun success(response: ArrayList<Fruta>) {
                         frutaData.postValue(frutaData.value?.apply {
                             status = STATUS.SUCCESS
@@ -55,7 +55,7 @@ class MainViewModel(
         showLoading()
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                frutaRepository.getListFruts(object : CallbackResponse<ArrayList<Fruta>>{
+                frutaRepository.getListFruts(object : CallbackResponse<ArrayList<Fruta>> {
                     override fun success(response: ArrayList<Fruta>) {
                         frutaData.postValue(frutaData.value?.apply {
                             status = STATUS.SUCCESS

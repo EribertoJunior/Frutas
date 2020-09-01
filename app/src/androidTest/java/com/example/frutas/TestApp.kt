@@ -2,7 +2,6 @@ package com.example.frutas
 
 import com.example.frutas.di.BASE_URL
 import com.example.frutas.di.DETAILS_URL
-import com.example.frutas.di.setUpDI
 
 class TestApp : App() {
     var url = "http://127.0.0.1:8080/"
@@ -11,7 +10,6 @@ class TestApp : App() {
         super.onCreate()
         BASE_URL = getBaseUrl()
         DETAILS_URL = getDetailsUrl()
-        //setUpDI()
     }
 
     override fun getBaseUrl(): String {

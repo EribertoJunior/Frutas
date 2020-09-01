@@ -20,7 +20,8 @@ fun Application.setUpDI() {
 
         properties(
             mapOf(
-
+                PROPERTY_BASE_URL to BASE_URL,
+                PROPERTY_DETAILS_URL to DETAILS_URL
             )
         )
 
@@ -28,6 +29,5 @@ fun Application.setUpDI() {
             listOf(appModule)
         )
 
-        properties(mapOf(PROPERTY_BASE_URL to BASE_URL, PROPERTY_DETAILS_URL to DETAILS_URL))
     }
 }

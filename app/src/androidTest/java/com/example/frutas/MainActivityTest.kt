@@ -99,8 +99,6 @@ class MainActivityTest {
         val result = Instrumentation.ActivityResult(Activity.RESULT_OK, null)
         intending(matcher).respondWith(result)
 
-        //onView(withId(R.id.login_button)).perform(click())
-
         onView(withId(R.id.rvListaDeFrutas))
             .perform(
                 RecyclerViewActions.actionOnItemAtPosition<AdapterFrutas.ViewHolder>(

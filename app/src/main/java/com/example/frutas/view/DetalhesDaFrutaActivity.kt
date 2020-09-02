@@ -46,6 +46,7 @@ class DetalhesDaFrutaActivity : AppCompatActivity(), LifecycleObserver {
                         tvDescricaoCompleta.text = frutaDetalhada.description
                         tvOutrosNomes.text = frutaDetalhada.othname
                         tvNomesBots.text = frutaDetalhada.botname
+                        tvNomeDaFruta.text = frutaDetalhada.tfvname
                     }
                 }
                 STATUS.ERROR ->{
